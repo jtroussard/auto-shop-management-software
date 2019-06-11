@@ -1,0 +1,38 @@
+{% extends "job_cards/base.html" %}
+{% block content1 %}
+<h1>Home</h1>
+<hr>
+<div class="table-responsive">
+  <table class="table table-dark table-striped table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">RO #</th>		
+        <th scope="col">S.Advisor</th>
+        <th scope="col">Customer</th>
+        <th scope="col">Vehicle</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for post in posts %}
+        <tr>
+          <th scope="row">
+            <!-- Default unchecked -->
+<div class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+    <label class="custom-control-label" for="defaultUnchecked">s</label>
+</div>
+          <th>{{ post.ro }}</th>
+          <td>{{ post.author }}</td>
+          <td>{{ post.customer }}</td>
+          <td>
+          	{{ post.vehicle_year }}
+          	{{ post.vehicle_make }}
+          	{{ post.vehicle_model }}
+          </td>
+        </tr>
+    	{% endfor %}
+    </tbody>
+    </table>
+  </div>
+{% endblock content1 %}
