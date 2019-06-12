@@ -43,3 +43,6 @@ def home(request):
 
 def about(request):
     return render(request, 'job_cards/about.html', {'title': 'About Page'})
+
+def test(request):
+    return render(request, 'job_cards/test.html', {'title': 'Test Page'})

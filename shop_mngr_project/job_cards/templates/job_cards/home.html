@@ -1,38 +1,57 @@
 {% extends "job_cards/base.html" %}
 {% block content1 %}
-<h1>Home</h1>
-<hr>
-<div class="table-responsive">
-  <table class="table table-dark table-striped table-hover">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col"></th>
-        <th scope="col">RO #</th>		
-        <th scope="col">S.Advisor</th>
-        <th scope="col">Customer</th>
-        <th scope="col">Vehicle</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for post in posts %}
-        <tr>
-          <th scope="row">
-            <!-- Default unchecked -->
-<div class="custom-control custom-checkbox">
-    <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-    <label class="custom-control-label" for="defaultUnchecked">s</label>
-</div>
-          <th>{{ post.ro }}</th>
-          <td>{{ post.author }}</td>
-          <td>{{ post.customer }}</td>
-          <td>
-          	{{ post.vehicle_year }}
-          	{{ post.vehicle_make }}
-          	{{ post.vehicle_model }}
-          </td>
-        </tr>
-    	{% endfor %}
-    </tbody>
-    </table>
+<div class="container">
+  <h1>Home</h1>
+  <hr>
+  <div class="row">
+    <div class="col-9"> <!-- Main Column --> 
+      <div class="table-responsive">
+        <table class="table table-dark table-striped table-hover">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">RO #</th>		
+              <th scope="col">S.Advisor</th>
+              <th scope="col">Customer</th>
+              <th scope="col">Vehicle</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for post in posts %}
+              <tr>
+                <th scope="row">
+                  <!-- Default unchecked -->
+                  <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                      <label class="custom-control-label" for="defaultUnchecked"></label>
+                  </div>
+                </th>
+                <th>{{ post.ro }}</th>
+                <td>{{ post.author }}</td>
+                <td>{{ post.customer }}</td>
+                <td>
+                	{{ post.vehicle_year }}
+                	{{ post.vehicle_make }}
+                	{{ post.vehicle_model }}
+                </td>
+              </tr>
+          	{% endfor %}
+          </tbody>
+          </table>
+      </div>
+    </div>
+    <div class="col-3">
+      <h3> DATE </h3>
+      <h3> TIME </h3>
+      <h3> UPCOMING APPOINTMENTS </h3>
+      <ul class="list-group">
+        <li class="list-group-item">Smith, Terry (2001 MBz)</li>
+        <li class="list-group-item">LaRouche, Mary (2010 MBz)</li>
+        <li class="list-group-item">Gardaner, Lester (1990 Chevy)</li>
+        <li class="list-group-item">Porta, Henry (2004 MBz)</li>
+        <li class="list-group-item">Local School (1984 Hvy)</li>
+      </ul>
+    </div>
   </div>
+</div>
 {% endblock content1 %}
